@@ -1,68 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <title>Conversor de Peso</title>
-</head>
-<body class="bg-secondary text-white mt-5">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-5">
-        <h1 class="display-4 text-center mb-5">Conversor de Peso em Kilos
-        </h1>
-        <form>
-          <div class="form-group">
-            <input type="number" class="form-control form-control-lg" placeholder="Digite o peso em Kilos..." id="inputKg">
-          </div>
-        </form>
-        <div id="output">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <title>Conversor de Peso</title>
+  </head>
+  <body class="bg-secondary text-white mt-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-5">
+          <h1 class="display-4 text-center mb-5">Conversor de Peso em Kilos</h1>
+          <form>
+            <div class="form-group">
+              <input
+                type="number"
+                class="form-control form-control-lg"
+                placeholder="Digite o peso em Kilos..."
+                id="inputKg"
+              />
+            </div>
+          </form>
+          <div id="output">
+            <div class="card bg-info mb-3">
+              <div class="card-block p-2">
+                <h2>Gramas:</h2>
+                <div id="gramasOutput" class="font-weight-bold"></div>
+              </div>
+            </div>
 
-          <div class="card bg-info mb-3">
-            <div class="card-block p-2">
-              <h2>Gramas:</h2>
-              <div id="gramasOutput" class="font-weight-bold"></div>
+            <div class="card bg-danger mb-3">
+              <div class="card-block p-2">
+                <h2>Libras:</h2>
+                <div id="librasOutput" class="font-weight-bold"></div>
+              </div>
+            </div>
+
+            <div class="card bg-success mb-3">
+              <div class="card-block p-2">
+                <h2>Onças:</h2>
+                <div id="onçaOutput" class="font-weight-bold"></div>
+              </div>
+            </div>
+
+            <div class="card bg-warning mb-3">
+              <div class="card-block p-2">
+                <h2>Toneladas:</h2>
+                <div id="tonOutput" class="font-weight-bold"></div>
+              </div>
             </div>
           </div>
-
-          <div class="card bg-danger mb-3">
-            <div class="card-block p-2">
-              <h2>Libras:</h2>
-              <div id="librasOutput" class="font-weight-bold"></div>
-            </div>
-          </div>
-
-          <div class="card bg-success mb-3">
-            <div class="card-block p-2">
-              <h2>Onças:</h2>
-              <div id="onçaOutput" class="font-weight-bold"></div>
-            </div>
-          </div>
-
-          <div class="card bg-warning mb-3">
-            <div class="card-block p-2">
-              <h2>Toneladas:</h2>
-              <div id="tonOutput" class="font-weight-bold"></div>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
-  </div>
 
-  <script>
-    document.getElementById('output').style.visibility = 'hidden'
-    document.getElementById('inputKg').addEventListener('input', function(e){
-      document.getElementById('output').style.visibility = 'visible'
-      let kg = e.target.value
-      document.getElementById('gramasOutput').innerHTML = (kg*1000).toFixed(2)+' g'
-      document.getElementById('librasOutput').innerHTML = (kg*2.20462262185).toFixed(2)+' lbs'
-      document.getElementById('onçaOutput').innerHTML = (kg*35.27396195).toFixed(2)+' oz'
-      document.getElementById('tonOutput').innerHTML = (kg/1000).toFixed(2)+' ton'
-    })
-  </script>
-</body>
+    <script>
+      document.getElementById("output").style.visibility = "hidden";
+      document
+        .getElementById("inputKg")
+        .addEventListener("input", function (e) {
+          document.getElementById("output").style.visibility = "visible";
+          let kg = e.target.value;
+          document.getElementById("gramasOutput").innerHTML =
+            (kg * 1000).toFixed(2) + " g";
+          document.getElementById("librasOutput").innerHTML =
+            (kg * 2.20462262185).toFixed(2) + " lbs";
+          document.getElementById("onçaOutput").innerHTML =
+            (kg * 35.27396195).toFixed(2) + " oz";
+          document.getElementById("tonOutput").innerHTML =
+            (kg / 1000).toFixed(2) + " ton";
+        });
+    </script>
+  </body>
 </html>
